@@ -7,6 +7,7 @@ npm install
 ```bash
 npm run start
 ```
+http://127.0.0.1:4200/
 
 # Comments
 логика лежит в index.jsx
