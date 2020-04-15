@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<!--       <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Leaflet Polygon Management Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="leaflet-geoman/dist/leaflet-geoman.css">
+    <link rel="stylesheet" href="leaflet-geoman/demo/demo.css" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+
+          <style>
+              .map-interface-wrapper {
+
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+
+              }
+
+              #basemaps-wrapper {
+                position: absolute;
+                bottom: 10px;
+                right: 30px;
+                width: 500px;
+                z-index: 400;
+                background: white;
+                padding: 10px;
+              }
+
+              .rebels-controls-wrapper {
+                position: relative;
+                bottom: 10px;
+                left: -5%;
+                right: 10px;
+                z-index: 401;
+                background: white;
+                border: dotted;
+                padding: 10px;
+                margin:auto;
+                height: 300px;
+                width: 110%;
+
+              }
+              #basemaps {
+                margin-bottom: 5px;
+              }
+
+              .rebels-selection-filter-input {
+                width: 200px;
+              }
+
+              .rebels-selection-list {
+                width: 200px;
+                height: 230px;
+              }
+
+              .rebels-left-menu {
+                /*position: relative;*/
+                float:left;
+
+                /*width:33%;*/
+                min-width: 200px;
+                height:100%
+
+              }
+              .rebels-parameter-content {
+                /*position: relative;*/
+                min-width: 66%;
+                height: 100%;
+
+
+                /*width:67%;*/
+
+              }
+            </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    <div class="wrapper, map-interface-wrapper">
+
+
+        <article class="map-interface-wrapper">
+
+
+            <div class="map-interface-wrapper">
+
+            <div class="map" id="example2"></div>
+
+            <div id="basemaps-wrapper" class="leaflet-bar">
+
+
+              <div class="rebels-controls-wrapper">
+
+                  <div id="root"></div>
+<!--&lt;!&ndash;                <input list="brow">&ndash;&gt;-->
+
+<!--                <div class="rebels-left-menu">-->
+<!--                Datasets<br>-->
+<!--                  <input id="dataset-filter" value="[dataset filter]" class="rebels-selection-filter-input">-->
+<!--                  <br>-->
+<!--                <select id="brow" size="10" class="rebels-selection-list">-->
+<!--                  <option value="Internet Explorer"> A-->
+<!--                  <option value="Firefox"> BBB-->
+<!--                  <option value="Chrome"> CCCC-->
+<!--                  <option value="Opera"> DDDDDD-->
+<!--                  <option value="Safari"> EEEEEEE-->
+<!--                </select>-->
+<!--                  <br>-->
+
+<!--                  <button>Upload</button>-->
+<!--                  <button>Download</button>-->
+<!--                  <button>New Dataset</button>-->
+
+<!--                </div>-->
+
+<!--                <div class="rebels-parameter-content">-->
+
+<!--                  <h3>Dataset roads 2020-02-24:</h3>-->
+<!--                  <br>-->
+
+
+
+<!--                  General area: 10 sq.m-->
+<!--                  <br>-->
+
+<!--                  Created: 2020-02-24-->
+<!--                  <br>-->
+
+
+<!--                </div>-->
+<!--              </div>-->
+<!--              Datasets-->
+
+<!--              Maps-->
+
+<!--              Models-->
+
+<!--&lt;!&ndash;              Segmentation Models&ndash;&gt;-->
+<!--&lt;!&ndash;              <select id="basemaps">&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Topographic">Topographic</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Streets">Streets</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="NationalGeographic">National Geographic</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Oceans">Oceans</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Gray">Gray</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="DarkGray">Dark Gray</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Imagery">Imagery</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="ImageryClarity">Imagery (Clarity)</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="ImageryFirefly">Imagery (Firefly)</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="ShadedRelief">Shaded Relief</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                <option value="Physical">Physical</option>&ndash;&gt;-->
+<!--&lt;!&ndash;              </select>&ndash;&gt;-->
+<!--&lt;!&ndash;              Detection models&ndash;&gt;-->
+
+<!--&lt;!&ndash;              <button>Apply model to the map region</button>&ndash;&gt;-->
+            </div>
+            </div>
+
+        </article>
+
+    </div>
+    <script src="leaflet-geoman/dist/leaflet-geoman.min.js"></script>
+    <script src="leaflet-geoman/demo/demo.js"></script>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

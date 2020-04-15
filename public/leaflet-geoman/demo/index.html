@@ -1,0 +1,166 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaflet Polygon Management Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="../dist/leaflet-geoman.css">
+    <link rel="stylesheet" href="demo.css" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <!-- <script src="../../leaflet-measure-path/leaflet-measure-path.js"></script> -->
+    <!-- <script src="https://unpkg.com/leaflet.markercluster@1.0.0"></script> -->
+            <style>
+              .map-interface-wrapper {
+
+                width: 100%;
+                height: 100%;
+                padding: 0px;
+
+              }
+
+              #basemaps-wrapper {
+                position: absolute;
+                bottom: 10px;
+                right: 30px;
+                width: 500px;
+                z-index: 400;
+                background: white;
+                padding: 10px;
+              }
+
+              .rebels-controls-wrapper {
+                position: relative;
+                bottom: 10px;
+                left: -5%;
+                right: 10px;
+                z-index: 401;
+                background: white;
+                border: dotted;
+                padding: 10px;
+                margin:auto;
+                height: 300px;
+                width: 110%;
+
+              }
+              #basemaps {
+                margin-bottom: 5px;
+              }
+
+              .rebels-selection-filter-input {
+                width: 200px;
+              }
+
+              .rebels-selection-list {
+                width: 200px;
+                height: 230px;
+              }
+
+              .rebels-left-menu {
+                /*position: relative;*/
+                float:left;
+
+                /*width:33%;*/
+                min-width: 200px;
+                height:100%
+
+              }
+              .rebels-parameter-content {
+                /*position: relative;*/
+                min-width: 66%;
+                height: 100%;
+
+
+                /*width:67%;*/
+
+              }
+            </style>
+</head>
+
+<body>
+
+    <div class="wrapper, map-interface-wrapper">
+
+
+        <article class="map-interface-wrapper">
+
+
+            <div class="map-interface-wrapper">
+
+            <div class="map" id="example2"></div>
+
+            <div id="basemaps-wrapper" class="leaflet-bar">
+
+
+              <div class="rebels-controls-wrapper">
+<!--                <input list="brow">-->кое
+
+                <div class="rebels-left-menu">
+                Datasets<br>
+                  <input id="dataset-filter" value="[dataset filter]" class="rebels-selection-filter-input">
+                  <br>
+                <select id="brow" size="10" class="rebels-selection-list">
+                  <option value="Internet Explorer"> A
+                  <option value="Firefox"> BBB
+                  <option value="Chrome"> CCCC
+                  <option value="Opera"> DDDDDD
+                  <option value="Safari"> EEEEEEE
+                </select>
+                  <br>
+
+                  <button>Upload</button>
+                  <button>Download</button>
+                  <button>New Dataset</button>
+
+                </div>
+
+                <div class="rebels-parameter-content">
+
+                  <h3>Dataset roads 2020-02-24:</h3>
+                  <br>
+
+
+
+                  General area: 10 sq.m
+                  <br>
+
+                  Created: 2020-02-24
+                  <br>
+
+
+                </div>
+              </div>
+              Datasets
+
+              Maps
+
+              Models
+
+<!--              Segmentation Models-->
+<!--              <select id="basemaps">-->
+<!--                <option value="Topographic">Topographic</option>-->
+<!--                <option value="Streets">Streets</option>-->
+<!--                <option value="NationalGeographic">National Geographic</option>-->
+<!--                <option value="Oceans">Oceans</option>-->
+<!--                <option value="Gray">Gray</option>-->
+<!--                <option value="DarkGray">Dark Gray</option>-->
+<!--                <option value="Imagery">Imagery</option>-->
+<!--                <option value="ImageryClarity">Imagery (Clarity)</option>-->
+<!--                <option value="ImageryFirefly">Imagery (Firefly)</option>-->
+<!--                <option value="ShadedRelief">Shaded Relief</option>-->
+<!--                <option value="Physical">Physical</option>-->
+<!--              </select>-->
+<!--              Detection models-->
+
+<!--              <button>Apply model to the map region</button>-->
+            </div>
+            </div>
+
+        </article>
+
+    </div>
+    <script src="../dist/leaflet-geoman.min.js"></script>
+    <script src="demo.js"></script>
+</body>
+
+</html>
