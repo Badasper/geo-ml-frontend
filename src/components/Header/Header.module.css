@@ -1,0 +1,6 @@
+.header {
+  grid-area: header;
+  background-color: #485f8b;
+  font-size: calc(20px + 2vmin);
+  color: white;
+}

@@ -1,0 +1,6 @@
+.footer {
+  grid-area: footer;
+  background-color: #485f8b;
+  font-size: calc(20px + 2vmin);
+  color: white;
+}
