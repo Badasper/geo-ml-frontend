@@ -1,8 +1,21 @@
 import React from 'react';
-import s from './Nav.module.css';
 
-const Nav = () => {
-  return <div className={s.nav}>Navigation</div>;
+const Nav = (props) => {
+  const { context } = props;
+  const handleClick = () => {
+    console.log(context);
+  };
+  return (
+    <div className="nav">
+      <button className="btn" type="button" onClick={handleClick}>
+        Pull
+      </button>
+      <span>|</span>
+      <button className="btn" type="button" onClick={handleClick}>
+        Fetch
+      </button>
+    </div>
+  );
 };
 
 export default Nav;

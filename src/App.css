@@ -1,13 +1,37 @@
 .grid {
   display: grid;
   grid-template-areas:
-    "header header"
-    "nav content"
-    "footer footer";
-  grid-gap: 2px;
+    "content content"
+    "nav nav";
 
-  grid-template-rows: 60px 80vh 60px;
-  grid-template-columns: 1fr 10fr;
+  grid-gap: 1px;
+
+  grid-template-rows: 95vh 5vh;
+  grid-template-columns: 1fr;
 
 }
 
+.nav {
+  grid-area: nav;
+  background-color: #4e80dd;
+  font-size: calc(5px + 1vmin);
+  color: white;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #485f8b;
+  font-size: calc(20px + 2vmin);
+  color: white;
+}
+
+.header {
+  grid-area: header;
+  background-color: #485f8b;
+  font-size: calc(20px + 2vmin);
+  color: white;
+}
+
+.btn {
+  font-size: calc(5px + 1vmin);
+}

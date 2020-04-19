@@ -1,6 +1,7 @@
 import Header from './Header/Header.jsx';
 import Navbar from './Nav/Nav.jsx';
-import Content from './Content/Content.jsx';
+import MapLeaflet from './MapLeaflet/MapLeaflet.jsx';
 import Footer from './Footer/Footer.jsx';
+import { MapLeaflet as Map, context } from './MapLeaflet/Map';
 
-export { Header, Navbar, Content, Footer };
+export { Header, Navbar, MapLeaflet, Footer, Map, context };
