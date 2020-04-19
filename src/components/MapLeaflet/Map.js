@@ -20,31 +20,44 @@ class MapLeaflet extends Component {
     });
 
     map.on('pm:create', (e) => {
-      const layer = e.layer;
-      if (e.shape === 'Circle') {
-        const info = [layer._latlng, layer.options];
-        context.push({
-          type: e.shape,
-          coordinates: info,
-        });
-      } else {
-        const geoJson = {
+      const layers = map._layers;
+      const geoJesons = Object.keys(layers)
+        .filter((x) => layers[x]._latlngs)
+        .map((x) => ({
+          id: count++,
           type: 'Feature',
           geometry: {
             type: e.shape,
-            coordinates: layer._latlngs,
+            coordinates: layers[x]._latlngs,
           },
           properties: {
             popupContent: '',
           },
-          id: count++,
-        };
-        context.push(geoJson);
-      }
-      // layer.on('pm:edit', (ev) => {
-      //   console.log(ev);
-      // });
+        }));
+      context.push(geoJesons);
     });
+
+    map.on('pm:drawend', (e) => {
+      const layers = map._layers;
+      const geoJesons = Object.keys(layers)
+        .filter((x) => layers[x]._latlngs)
+        .map((x) => ({
+          id: count++,
+          type: 'Feature',
+          geometry: {
+            type: e.shape,
+            coordinates: layers[x]._latlngs,
+          },
+          properties: {
+            popupContent: '',
+          },
+        }));
+      context.push(geoJesons);
+    });
+
+    // layer.on('pm:edit', e => {
+    //   console.log(e);
+    // });
   }
 
   render() {
