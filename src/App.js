@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Navbar, Map, context } from './components';
+import { Navbar, MapLeaflet, context } from './components';
 
 function App() {
   return (
     <div className="grid">
       <Navbar context={context} />
-      <Map />
+      <MapLeaflet />
     </div>
   );
 }

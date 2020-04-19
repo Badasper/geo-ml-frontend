@@ -10,7 +10,7 @@ const Nav = (props) => {
       <button className="btn" type="button" onClick={handleClick}>
         Pull
       </button>
-      <span>|</span>
+      <span>||</span>
       <button className="btn" type="button" onClick={handleClick}>
         Fetch
       </button>
